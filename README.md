@@ -25,3 +25,6 @@ There are several ways to run a Spring Boot application on your local machine. O
 8. Right Click on the file and Run as Java Application
 9. Alternatively you can use the Spring Boot Maven plugin like so:
 mvn spring-boot:run
+
+URLs:
+http://localhost:8080/	Landing Page that displays the weather report
