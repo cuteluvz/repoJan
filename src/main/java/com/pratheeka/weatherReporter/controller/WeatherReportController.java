@@ -31,8 +31,7 @@ public class WeatherReportController
     @GetMapping("/")
     public String weatherReport(Model model) throws ParseException 
     {
-    	// weatherReport = (weatherReport.size() > 0) ? weatherReport :this.weatherReporterService.getWeatherReport();
-    	weatherReport = this.weatherReporterService.getWeatherReport();
+    	weatherReport = (weatherReport.size() > 0) ? weatherReport :this.weatherReporterService.getWeatherReport();
     	model.addAttribute("weatherReport", weatherReport);
 
         return "weatherReport";
@@ -44,7 +43,7 @@ public class WeatherReportController
 	{
 		final StationWeatherDetails details = weatherReport.get(stationName);
 		model.addAttribute("stationWeatherDetails", details);
-		System.out.println(details);
+		
 		return "stationWeatherDetails";
 	}
 }
