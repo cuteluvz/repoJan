@@ -11,3 +11,17 @@ Technologies/Frameworks used:
 *Maven
 *SLF4j Logging
 *Apache Commons CSV
+
+*Running the application locally*
+There are several ways to run a Spring Boot application on your local machine. One way is to execute the main method in the com.arc.sbtest.SBtemplateApplication class from your IDE.
+
+1. Download the zip or clone the Git repository.
+2. Unzip the zip file (if you downloaded one)
+3. Open Command Prompt and Change directory (cd) to folder containing pom.xml
+4. Open Eclipse
+5. File -> Import -> Existing Maven Project -> Navigate to the folder where you unzipped the zip
+6. Select the project
+7. Choose the Spring Boot Application file (search for @SpringBootApplication)
+8. Right Click on the file and Run as Java Application
+9. Alternatively you can use the Spring Boot Maven plugin like so:
+mvn spring-boot:run
