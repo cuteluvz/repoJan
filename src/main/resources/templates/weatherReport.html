@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Weather Report</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+
+        .table thead th {
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+    </style>
+
+</head>
+<div>
+	<h1 style="padding-left: 200px;">Weather Report</h1>
+</div>
+<body>
+<table border="1" style="width:auto">
+	<thead>
+     <tr>
+         <th>Station Name</th>
+         <th>Date</th>
+         <th>Mean Temperature</th>
+     </tr>
+    </thead>
+    <tbody>
+    <tr th:each="stationReport : ${weatherReport}">
+    	<td th:text="${stationReport.getKey()}">Station Name</td>
+        <td th:text="${#dates.format(stationReport.getValue().getReportDate(), 'dd/MM/yyyy')}">Date</td>
+        <td><a th:href="@{'/weatherReport/details?stationName='+${stationReport.getKey()}}" th:text="${stationReport.getValue().getMeanTemp()}">Mean Temperature</a></td>
+    </tr>
+</table>
+</body>
+</html>

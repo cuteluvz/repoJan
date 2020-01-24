@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Details</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+
+        .table thead th {
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+    </style>
+</head>
+<div>
+	<h1 style="padding-left: 200px;" align="left">Details</h1>
+</div>
+<body align="left">
+    	<p th:text="'Station Name: '+ ${stationWeatherDetails.getStationName()}"/>
+    	<p th:text="'Province: '+ ${stationWeatherDetails.getProvince()}"/>
+    	<p th:text="'Date: '+ ${stationWeatherDetails.getReportDate()}"/>
+    	<p th:text="'Mean Temperature: '+ ${stationWeatherDetails.getMeanTemp()}"/>
+    	<p th:text="'Highest Monthly Max Temperature: '+ ${stationWeatherDetails.getHighestMonthlyTemp()}"/>
+    	<p th:text="'Lowest Monthly Max Temperature: '+ ${stationWeatherDetails.getLowestMonthlyTemp()}"/>
+</body>
+</html>
