@@ -28,3 +28,8 @@ mvn spring-boot:run
 
 URLs:
 http://localhost:8080/	Landing Page that displays the weather report
+
+
+TODO:
+1. Add unit tests in JUnit
+2. Add date filter to the landing page by adding datepickers and conditionally displaying the rows whose date lies within the range selected.
