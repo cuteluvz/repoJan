@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -36,9 +37,13 @@ public class WeatherReportController {
 	@GetMapping("weatherReport/details")
 	public String stationWeatherDetails(@RequestParam(required = true) String stationName, Model model) 
 	{
+		if(StringUtils.isEmpty(stationName))
+		{
+			return "error";
+		}
 		final StationWeatherDetails details = weatherReport.get(stationName);
 		model.addAttribute("stationWeatherDetails", details);
 
-		return "stationWeatherDetails";
+		return details != null ? "stationWeatherDetails" : "error";
 	}
 }
