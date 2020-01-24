@@ -27,9 +27,9 @@
     </thead>
     <tbody>
     <tr th:each="stationReport : ${weatherReport}">
-    	<td th:text="${stationReport.getKey()}">Station Name</td>
-        <td th:text="${#dates.format(stationReport.getValue().getReportDate(), 'dd/MM/yyyy')}">Date</td>
-        <td><a th:href="@{'/weatherReport/details?stationName='+${stationReport.getKey()}}" th:text="${stationReport.getValue().getMeanTemp()}">Mean Temperature</a></td>
+    	<td align="center" th:text="${stationReport.getValue().getStationName()}">Station Name</td>
+        <td align="center" th:text="${#dates.format(stationReport.getValue().getReportDate(), 'dd/MM/yyyy')}">Date</td>
+        <td align="center"><a th:href="@{'/weatherReport/details?stationName='+${stationReport.getValue().getStationName()}}" th:text="${stationReport.getValue().getMeanTemp()}">Mean Temperature</a></td>
     </tr>
 </table>
 </body>

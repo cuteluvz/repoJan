@@ -18,7 +18,7 @@
 <body align="left">
     	<p th:text="'Station Name: '+ ${stationWeatherDetails.getStationName()}"/>
     	<p th:text="'Province: '+ ${stationWeatherDetails.getProvince()}"/>
-    	<p th:text="'Date: '+ ${stationWeatherDetails.getReportDate()}"/>
+    	<p th:text="'Date: '+ ${#dates.format(stationWeatherDetails.getReportDate(), 'dd/MM/yyyy')}"/>
     	<p th:text="'Mean Temperature: '+ ${stationWeatherDetails.getMeanTemp()}"/>
     	<p th:text="'Highest Monthly Max Temperature: '+ ${stationWeatherDetails.getHighestMonthlyTemp()}"/>
     	<p th:text="'Lowest Monthly Max Temperature: '+ ${stationWeatherDetails.getLowestMonthlyTemp()}"/>

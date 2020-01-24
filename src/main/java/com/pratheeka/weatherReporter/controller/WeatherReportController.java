@@ -31,18 +31,20 @@ public class WeatherReportController
     @GetMapping("/")
     public String weatherReport(Model model) throws ParseException 
     {
-    	weatherReport = (weatherReport.size() > 0) ? weatherReport :this.weatherReporterService.getWeatherReport();
-        model.addAttribute("weatherReport", weatherReport);
+    	// weatherReport = (weatherReport.size() > 0) ? weatherReport :this.weatherReporterService.getWeatherReport();
+    	weatherReport = this.weatherReporterService.getWeatherReport();
+    	model.addAttribute("weatherReport", weatherReport);
 
         return "weatherReport";
     }
     
 	@GetMapping("weatherReport/details")
-	public String stationWeatherDetails(@RequestParam(required = false) String stationName, Model model) 
+	public String stationWeatherDetails(@RequestParam(required = true) String stationName,
+			Model model) 
 	{
 		final StationWeatherDetails details = weatherReport.get(stationName);
 		model.addAttribute("stationWeatherDetails", details);
-		
+		System.out.println(details);
 		return "stationWeatherDetails";
 	}
 }

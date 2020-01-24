@@ -27,7 +27,7 @@ public class WeatherReportCSVParser
 {
 	private static final Logger logger = LoggerFactory.getLogger(WeatherReportCSVParser.class);
 
-	private static final String SAMPLE_CSV_FILE_PATH = "./dummy-climate-summary.csv";
+	private static final String SAMPLE_CSV_FILE_PATH = "./eng-climate-summary.csv";
 
 	private static final List<StationWeatherDetails> allStationsWeatherDetails = new LinkedList<StationWeatherDetails>();
 
